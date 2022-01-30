@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace xadrez_console.Tabuleiro
+namespace tabuleiro
 {
     public class Tabuleiro
     {
@@ -10,13 +10,18 @@ namespace xadrez_console.Tabuleiro
 
         public int Colunas { get; set; }
 
-        private Peca[,] pecas;
+        private Peca[,] pecas; //aqui estão todas as peças do tabuleiro
 
         public Tabuleiro(int linhas, int colunas)
         {
             Linhas = linhas;
             Colunas = colunas;
             pecas = new Peca[linhas, colunas];
+        }
+
+        public Peca peca (int linha, int coluna)
+        {
+            return pecas[linha, coluna];
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace xadrez_console.Tabuleiro
+namespace tabuleiro
 {
     public enum Cor
     {

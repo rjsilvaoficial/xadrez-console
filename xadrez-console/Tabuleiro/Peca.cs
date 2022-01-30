@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Tabuleiro;
+using tabuleiro;
 
-namespace xadrez_console.Tabuleiro
+namespace tabuleiro
 {
     public class Peca
     {
