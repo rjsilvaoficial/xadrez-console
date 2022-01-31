@@ -12,9 +12,12 @@ namespace tabuleiro
             Coluna = Coluna;
         }
 
+        /*
+        //Esse ToString() possivelmente será descartado
         public override string ToString()
         {
             return Linha + "," + Coluna;
         }
+        */
     }
 }

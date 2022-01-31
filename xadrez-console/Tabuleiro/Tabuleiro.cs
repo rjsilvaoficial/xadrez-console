@@ -10,7 +10,7 @@ namespace tabuleiro
 
         public int Colunas { get; set; }
 
-        private Peca[,] pecas; //aqui estão todas as peças do tabuleiro
+        private Peca[,] pecas; //aqui estão todas as peças do tabuleiro e as respectivas posições portanto
 
         public Tabuleiro(int linhas, int colunas)
         {
@@ -23,5 +23,13 @@ namespace tabuleiro
         {
             return pecas[linha, coluna];
         }
+
+        public void colocarPeca(Peca p, Posicao pos) //atribua peça e posição destas à: peças[] e p.posição
+        {
+            pecas[pos.Linha, pos.Coluna] = p;
+            p.posicao = pos;
+        }
+
+
     }
 }
