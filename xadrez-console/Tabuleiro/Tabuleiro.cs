@@ -40,6 +40,11 @@ namespace tabuleiro
 
         public void colocarPeca(Peca p, Posicao pos) //atribua peça e posição destas à: peças[] e p.posição
         {
+            if (existePeca(pos))
+            {
+                throw new TabuleiroException("Já existe uma peça nesta posição!");
+            }
+
             pecas[pos.Linha, pos.Coluna] = p;
             p.posicao = pos;
         }
