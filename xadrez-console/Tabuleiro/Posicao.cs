@@ -1,22 +1,22 @@
 ﻿
-namespace tabuleiro
+namespace tabuleiro //ok
 {
     public class Posicao
     {
-        public int Linha { get; set; }
-        public int Coluna { get; set; }
+        public int linha { get; set; }
+        public int coluna { get; set; }
 
         public Posicao(int linha, int coluna)
         {
-            Linha = linha;
-            Coluna = Coluna;
+            this.linha = linha;
+            this.coluna = coluna;
         }
 
         
         //Esse ToString() possivelmente será descartado futuramente
         public override string ToString()
         {
-            return Linha + "," + Coluna;
+            return linha + "," + coluna;
         }
         
     }
