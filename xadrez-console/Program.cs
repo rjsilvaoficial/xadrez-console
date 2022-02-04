@@ -1,7 +1,6 @@
 ﻿using System;
 using tabuleiro;
 using xadrez;
-using xadrez_console.xadrez;
 
 namespace xadrez_console
 {
@@ -19,8 +18,15 @@ namespace xadrez_console
                     Tela.imprimirTabuleiro(partida.tab);
 
                     Console.Write("Origem: ");
-                    Posicao origem = Tela.lerPosicaoXadrez().toPosicao(); 
-                    
+                    Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
+
+                    //trecho destinado a "pintar" as posições passíveis de movimento
+                    bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
+
+                    Console.Clear();
+                    Tela.imprimirTabuleiro(partida.tab, posicoesPossiveis);
+
+
                     Console.Write("Destino: ");
                     Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
 

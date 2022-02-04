@@ -21,12 +21,14 @@ namespace tabuleiro
         }
 
         
+        //Este método visa retornar uma peça com base em seus índices na matriz
         public Peca peca (int linha, int coluna)
         {
             return pecas[linha, coluna];
         }
         
-
+        //Este método visa retornar uma peça com base em sua posição
+        //É uma variação/sobrecarga do método anterior
         public Peca peca (Posicao pos)
         {
             return pecas[pos.linha, pos.coluna];
@@ -38,7 +40,9 @@ namespace tabuleiro
             return peca(pos) != null;
         }
 
-        public void colocarPeca(Peca p, Posicao pos) //atribua peça e posição destas à: peças[] e p.posição
+        //atribua peça e posição destas a peças[,] e pos a p.posição
+        //este método é usado (até então) apenas na instanciação das peças no início da partida
+        public void colocarPeca(Peca p, Posicao pos) 
         {
             if (existePeca(pos))
             {

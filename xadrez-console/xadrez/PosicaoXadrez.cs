@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using tabuleiro;
+﻿using tabuleiro;
 
-namespace xadrez_console.xadrez
+namespace xadrez
 {
     public class PosicaoXadrez
     {
@@ -19,12 +16,14 @@ namespace xadrez_console.xadrez
 
         public Posicao toPosicao() //converte posição da matriz para posicao da interface de usuário
         {
+            //a lógica aqui compreende a quantidade de linhas total do tabuleiro - a linha atual
+            //seguida da coluna - o caractere 'a' (que vale um int), isso permite a movimentação adequada
             return new Posicao(8 - linha, coluna - 'a');
         }
 
         public override string ToString()
         {
-            return "" + coluna + linha;
+            return "" + coluna + linha;//essa sintaxe é gambiarra pois obriga a conversão para string
         }
     }
 }

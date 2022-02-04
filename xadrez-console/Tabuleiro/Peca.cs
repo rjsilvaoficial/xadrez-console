@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using tabuleiro;
-
-namespace tabuleiro
+﻿namespace tabuleiro
 {
-    public class Peca
+    public abstract class Peca
     {
-        public Posicao posicao { get; set; }
+        //recebe uma intância de posição contendo o local atual da peça com base em ints
+        public Posicao posicao { get; set; } 
 
         public Cor cor { get; protected set; }
 
@@ -29,5 +25,12 @@ namespace tabuleiro
             qtdMovimentos++;
             
         }
+
+        /*Este método registrará todas as casas do tabuleiro
+         *Avaliará se é possível ou não mover para a casa em questão (a configuração de critério será por classe) 
+         *É abstrato pois a implementação é responsabilidade de quem herda da classe
+         */
+        public abstract bool[,] movimentosPossiveis();
+
     }
 }

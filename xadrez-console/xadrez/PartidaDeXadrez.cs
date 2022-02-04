@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using tabuleiro;
-using xadrez_console.xadrez;
 
 namespace xadrez
 {
@@ -47,10 +46,10 @@ namespace xadrez
             tab.colocarPeca(new Bispo(tab, Cor.Preta), new PosicaoXadrez('f', 8).toPosicao());
 
             
-            tab.colocarPeca(new Rei(tab, Cor.Preta), new PosicaoXadrez('d', 8).toPosicao());
+            tab.colocarPeca(new Rei(tab, Cor.Preta), new PosicaoXadrez('d', 5).toPosicao());
             tab.colocarPeca(new Dama(tab, Cor.Preta), new PosicaoXadrez('e', 8).toPosicao());
 
-            
+            /*
             tab.colocarPeca(new Peao(tab, Cor.Preta), new PosicaoXadrez('a', 7).toPosicao());
             tab.colocarPeca(new Peao(tab, Cor.Preta), new PosicaoXadrez('b', 7).toPosicao());
             tab.colocarPeca(new Peao(tab, Cor.Preta), new PosicaoXadrez('c', 7).toPosicao());
