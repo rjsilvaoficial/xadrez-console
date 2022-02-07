@@ -32,6 +32,7 @@ namespace xadrez
                 Console.Write($" {(char)k}");
             }
             Console.WriteLine();
+            Console.WriteLine();
         }
 
         //Esta sobrecarga gera em tela a marcação visual das posições possíveis para mover uma peça
@@ -64,8 +65,10 @@ namespace xadrez
             {
                 Console.Write($" {(char)k}");
             }
-            Console.WriteLine("");
+            Console.WriteLine();
             Console.BackgroundColor = fundoOriginal;
+            Console.WriteLine();
+
         }
 
 

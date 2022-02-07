@@ -61,7 +61,7 @@ namespace tabuleiro
             }
             else
             {
-                Peca aux = peca(pos);
+                Peca aux = peca(pos); //busca peça na pos referida
                 aux.posicao = null;
                 pecas[pos.linha, pos.coluna] = null;
                 return aux;

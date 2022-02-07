@@ -26,6 +26,28 @@
             
         }
 
+        public bool existeMovimentoPossiveis()
+        {
+            var mat = movimentosPossiveis();
+            for(int i = 0; i < tab.linhas; i++)
+            {
+                for(int j = 0; j < tab.colunas; j++)
+                {
+                    if (mat[i, j])
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+
+        }
+
+        public bool podeMoverPara(Posicao pos)
+        {
+            return movimentosPossiveis()[pos.linha, pos.coluna];
+        }
+
         /*Este método registrará todas as casas do tabuleiro
          *Avaliará se é possível ou não mover para a casa em questão (a configuração de critério será por classe) 
          *É abstrato pois a implementação é responsabilidade de quem herda da classe

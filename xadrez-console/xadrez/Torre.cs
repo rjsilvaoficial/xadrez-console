@@ -17,7 +17,7 @@ namespace xadrez
 
         public override bool[,] movimentosPossiveis()
         {
-            bool[,] mat = new bool[tab.linhas, tab.colunas];
+            bool[,] posicoesDisponiveis = new bool[tab.linhas, tab.colunas];
 
             Posicao pos = new Posicao(0, 0);
 
@@ -26,7 +26,7 @@ namespace xadrez
             pos.definirValores(posicao.linha - 1, posicao.coluna);
             while(tab.posicaoValida(pos) && podeMover(pos))
             {
-                mat[pos.linha, pos.coluna] = true;
+                posicoesDisponiveis[pos.linha, pos.coluna] = true;
                 if(tab.peca(pos) != null && tab.peca(pos).cor != cor)
                 {
                     break;
@@ -39,7 +39,7 @@ namespace xadrez
             pos.definirValores(posicao.linha + 1, posicao.coluna);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
-                mat[pos.linha, pos.coluna] = true;
+                posicoesDisponiveis[pos.linha, pos.coluna] = true;
                 if(tab.peca(pos) != null && tab.peca(pos).cor != cor)
                 {
                     break;
@@ -50,10 +50,10 @@ namespace xadrez
             //esquerda
 
             pos.definirValores(posicao.linha, posicao.coluna - 1);
-            while(tab.posicaoValida(pos) && podeMover(pos))
+            while (tab.posicaoValida(pos) && podeMover(pos))
             {
-                mat[pos.linha, pos.coluna] = true;
-                if(tab.peca(pos) != null && tab.peca(pos).cor != cor)
+                posicoesDisponiveis[pos.linha, pos.coluna] = true;
+                if (tab.peca(pos) != null && tab.peca(pos).cor != cor)
                 {
                     break;
                 }
@@ -62,17 +62,20 @@ namespace xadrez
             }
 
             //direita
+
             pos.definirValores(posicao.linha, posicao.coluna + 1);
-            while(tab.posicaoValida(pos) && podeMover(pos))
+            while (tab.posicaoValida(pos) && podeMover(pos))
             {
-                if(tab.peca(pos) != null && tab.peca(pos).cor != cor)
+                posicoesDisponiveis[pos.linha, pos.coluna] = true;
+                if (tab.peca(pos) != null && tab.peca(pos).cor != cor)
                 {
                     break;
                 }
                 pos.coluna++;
+
             }
 
-            return mat;
+            return posicoesDisponiveis;
 
         }
 
