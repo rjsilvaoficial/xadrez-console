@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using tabuleiro;
 
 namespace xadrez
@@ -33,6 +34,44 @@ namespace xadrez
             }
             Console.WriteLine();
             Console.WriteLine();
+        }
+
+        public static void imprimirPartida(PartidaDeXadrez partida)
+        {
+            imprimirTabuleiro(partida.tab);
+            Console.WriteLine();
+            imprimirPecasCapturadas(partida);
+            Console.WriteLine($"Turno atual: {partida.turno}");
+            Console.WriteLine();
+            Console.WriteLine($"Aguardando jogada: {partida.jogadorAtual}");
+            Console.WriteLine();
+        }
+
+        public static void imprimirPecasCapturadas(PartidaDeXadrez partida)
+        {
+            Console.WriteLine("Peças capturadas: ");
+            Console.WriteLine();
+
+            Console.Write("Brancas: ");
+            imprimirConjunto(partida.pecasCapturadas(Cor.Branca));
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.Write("Pretas: ");
+            imprimirConjunto(partida.pecasCapturadas(Cor.Preta));
+            Console.WriteLine();
+            Console.WriteLine();
+
+        }
+
+        public static void imprimirConjunto(HashSet<Peca> conjunto)
+        {
+            Console.Write("[");
+            foreach(Peca peca in conjunto)
+            {
+                Console.Write($"{ peca} ");
+            }
+            Console.Write("]");
+
         }
 
         //Esta sobrecarga gera em tela a marcação visual das posições possíveis para mover uma peça
